@@ -20,22 +20,19 @@ function toRoom () {
     roomIdArea.style.display ="block";
 }
 
-if (sessionStorage.getItem('roomId')) {
-    toRoom();
-    roomIdText.innerHTML = sessionStorage.getItem('roomId');
-} else {
-    toTopMenu();
-}
-
 // クライアントからサーバーへの接続要求
 const socket = io.connect();
 
 // 接続時の処理
 socket.on('connect', () => {
-    console.log('connect');
+    // console.log('connect');
 
     if (sessionStorage.getItem('roomId')) {
+        toRoom();
+        roomIdText.innerHTML = sessionStorage.getItem('roomId');
         socket.emit('roomId', sessionStorage.getItem('roomId'));
+    } else {
+        toTopMenu();
     }
 });
 
@@ -81,5 +78,4 @@ $('#msgForm').submit(() => {
 // 退出ボタンを押した時の処理
 $('#exitForm').submit(() => {
     sessionStorage.removeItem('roomId');
-    toTopMenu();
 });
