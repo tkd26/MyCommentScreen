@@ -63,8 +63,8 @@ socket.on('message', async function createText(msg) {
 // 拍手ボタン
 socket.on('action', async function crap(msg){
 
-    const music = new Audio('musics/crap.mp3');
-    music.play();
+    // const music = new Audio('musics/crap.mp3');
+    // music.play();
 
     let div_text = document.createElement('div');
     div_text.id = "action" + count; //アニメーション処理で対象の指定に必要なidを設定
