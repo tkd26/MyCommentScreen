@@ -22,18 +22,6 @@
                 -2px  0px 1px #ffffff,
                 0px -2px 1px #ffffff;
         }
-
-        .text{
-            font-size:3em;
-            color:#000;
-            animation: flowing 5s linear infinite;
-            transform: translateX(1000px);/*初期位置*/
-        }
-        @keyframes flowing {
-            100% {
-                transform: translateX(0px);
-            }
-        }
     </style>
 </head>
 <body>
@@ -44,7 +32,6 @@
     </div>
 
     <div id='msgSpace'></div>
-    <div><p class="text">流れる文字のCSSアニメーション</p></div>
     <div id='actionSpace'></div>
 
     <script src="/socket.io/socket.io.js"></script>
