@@ -43,8 +43,9 @@ socket.on('message', async function createText(msg) {
         //ライブラリを用いたテキスト移動のアニメーション： durationはアニメーションの時間、
         //        横方向の移動距離は「画面の横幅＋画面を流れるテキストの要素の横幅」、移動中に次の削除処理がされないようawait
         await gsap.to("#"+div_text.id, {
-            duration: 10, 
-            x: -1*(document.documentElement.clientWidth + div_text.clientWidth * 3)
+            duration: 8, 
+            x: -1*(document.documentElement.clientWidth + div_text.clientWidth),
+            ease: Linear.easeNone,
         });
     
         div_text.parentNode.removeChild(div_text); //画面上の移動終了後に削除
