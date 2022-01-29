@@ -31,16 +31,6 @@ socket.on('message', async function createText(msg) {
         count++;
         div_text.style.fontSize = '50px';
         div_text.style.fontWeight = 'bold';
-        div_text.style.textShadow = `
-                    2px  2px 1px #ffffff, 
-                    -2px  2px 1px #ffffff, 
-                    2px -2px 1px #ffffff, 
-                    -2px -2px 1px #ffffff, 
-                    2px  0px 1px #ffffff, 
-                    0px  2px 1px #ffffff, 
-                    -2px  0px 1px #ffffff,
-                    0px -2px 1px #ffffff;
-                    ` // 縁取り
         div_text.style.position = 'fixed'; //テキストのは位置を絶対位置にするための設定
         div_text.style.whiteSpace = 'nowrap' //画面右端での折り返しがなく、画面外へはみ出すようにする
         div_text.style.left = (document.documentElement.clientWidth) + 'px'; //初期状態の横方向の位置は画面の右端に設定
@@ -77,7 +67,7 @@ socket.on('action', async function crap(msg){
     let random = Math.round( Math.random() * (document.documentElement.clientWidth - 50) );
     div_text.style.left = random + 'px';  //初期状態の縦方向の位置は画面の上端から下端の間に設定（ランダムな配置に）
     div_text.appendChild(document.createTextNode(msg)); //画面上に表示されるテキストを設定
-    msgSpace.appendChild(div_text);
+    actionSpace.appendChild(div_text);
     // document.body.appendChild(div_text); //body直下へ挿入
 
     //ライブラリを用いたテキスト移動のアニメーション： durationはアニメーションの時間、
