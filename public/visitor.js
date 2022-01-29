@@ -3,6 +3,7 @@
 const topMenu = document.getElementById("topMenu");
 const msgForm = document.getElementById("msgForm");
 const crapButton = document.getElementById("crapButton");
+const heartButton = document.getElementById("heartButton");
 const exitForm = document.getElementById("exitForm");
 const roomIdText = document.getElementById('roomIdText');
 const roomIdArea = document.getElementById('roomIdArea');
@@ -78,10 +79,14 @@ $('#msgForm').submit(() => {
 
 // 
 crapButton.addEventListener('click', async () => {
-    console.log('ok')
-    // サーバーに、イベント名 'crap' で入力テキストを送信
-    // これは参加したroom ID内にのみ送信される
-    socket.emit('crap');
+    socket.emit('action', '👏');
+
+    // フォーム送信はしない
+    return false;
+});
+
+heartButton.addEventListener('click', async () => {
+    socket.emit('action', '❤️');
 
     // フォーム送信はしない
     return false;

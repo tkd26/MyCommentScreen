@@ -15,17 +15,16 @@
             height: 100%;
             /* background-color: #aaa; */
             display: flex;
-            align-items: center;
             flex-flow: wrap;
-            justify-content: space-around;
+            justify-content: center;
             padding: 200px 0px 0px 0px;
         }
         .btn-container {
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center;
-            justify-content: space-around;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .enter-form {
             width: 500px;
@@ -36,7 +35,10 @@
         .small-title {
             font-size: 12px;
         }
-        .crap-btn {
+        .action-btn {
+            margin: 10px;
+        }
+        .btn-icon {
             font-size: 2rem;
         }
     </style>
@@ -104,9 +106,14 @@
         </div>
 
         <div class="btn-container">
-            <button type="submit" id="crapButton" class="btn btn-outline-warning rounded-circle p-0" style="width:4rem;height:4rem;">
-                <span class="crap-btn">
+            <button type="submit" id="crapButton" class="btn btn-outline-warning rounded-circle p-0 action-btn" style="width:4rem;height:4rem;">
+                <span class="btn-icon">
                     👏
+                </span>
+            </button>
+            <button type="submit" id="heartButton" class="btn btn-outline-danger rounded-circle p-0 action-btn" style="width:4rem;height:4rem;">
+                <span class="btn-icon">
+                    ❤️
                 </span>
             </button>
         </div>

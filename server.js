@@ -39,10 +39,9 @@ io.on('connection', (socket) => {
         });
 
         // 拍手ボタン受信時の処理
-        socket.on('crap', () => {
-            // console.log('new message:', roomid, strMessage);
+        socket.on('action', (strMessage) => {
             // 受け取ったroom IDのroomにのみメッセージを送信する
-            io.to(roomid).emit('crap');
+            io.to(roomid).emit('action', strMessage);
         });
     });
 
